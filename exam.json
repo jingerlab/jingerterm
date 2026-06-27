@@ -1,0 +1,56 @@
+{
+  "exam_name": "Data Analytics & Engineering Core Assessment",
+  "institute_name": "SIBM Nagpur",
+  "duration_minutes": 60,
+  "questions": [
+    {
+      "id": 1,
+      "language": "Python",
+      "context_text": "A 2D NumPy array named 'matrix' is pre-loaded:\n[[10, 20, 30],\n [40, 50, 60],\n [70, 80, 90]]",
+      "context_code": "import numpy as np\nmatrix = np.array([[10, 20, 30], [40, 50, 60], [70, 80, 90]])\n",
+      "prompt": "Write code to slice the sub-matrix containing the elements [[50, 60], [80, 90]] and print it."
+    },
+    {
+      "id": 2,
+      "language": "Python",
+      "context_text": "A pandas DataFrame named 'df' is pre-loaded:\n   EmpID     Name  Salary\n0    101    Harsh   85000\n1    102    Sneha   92000\n2    103  Amitash   78000",
+      "context_code": "import pandas as pd\ndata = {'EmpID': [101, 102, 103], 'Name': ['Harsh', 'Sneha', 'Amitash'], 'Salary': [85000, 92000, 78000]}\ndf = pd.DataFrame(data)\n",
+      "prompt": "Filter the dataframe 'df' to show only the rows where Salary is greater than 80000. Print the resulting dataframe."
+    },
+    {
+      "id": 3,
+      "language": "Python",
+      "context_text": "A pandas DataFrame named 'sales_df' is pre-loaded:\n       Region  Revenue\n0       North    12000\n1        West    18000\n2       North    15000\n3        West    22000\n4        East    14000",
+      "context_code": "import pandas as pd\nsales_df = pd.DataFrame({'Region': ['North', 'West', 'North', 'West', 'East'], 'Revenue': [12000, 18000, 15000, 22000, 14000]})\n",
+      "prompt": "Group the 'sales_df' DataFrame by 'Region', calculate the total sum of 'Revenue' for each region, and print the resulting series or DataFrame."
+    },
+    {
+      "id": 4,
+      "language": "Python",
+      "context_text": "A pandas DataFrame named 'survey_df' contains missing metric records:\n     ID   Age\n0  1001  25.0\n1  1002   NaN\n2  1003  29.0\n3  1004   NaN",
+      "context_code": "import pandas as pd\nimport numpy as np\nsurvey_df = pd.DataFrame({'ID': [1001, 1002, 1003, 1004], 'Age': [25.0, np.nan, 29.0, np.nan]})\n",
+      "prompt": "Impute the missing data cells inside the 'Age' column by filling all NaN references with the static numerical scalar value 30. Print the finalized DataFrame."
+    },
+    {
+      "id": 5,
+      "language": "SQL",
+      "context_text": "Table 'students' is available with columns: id, name, score.",
+      "context_code": "CREATE TABLE students (id INT, name TEXT, score INT); INSERT INTO students VALUES (1, 'Alice', 95), (2, 'Bob', 82), (3, 'Charlie', 88);",
+      "prompt": "Select the 'name' and 'score' of all entries inside the 'students' table where score is greater than 85."
+    },
+    {
+      "id": 6,
+      "language": "SQL",
+      "context_text": "Table 'inventory' is available with columns: item_id, item_name, stock_count.",
+      "context_code": "CREATE TABLE inventory (item_id INT, item_name TEXT, stock_count INT); INSERT INTO inventory VALUES (501, 'Monitors', 12), (502, 'Keyboards', 0), (503, 'Mice', 45), (504, 'Laptops', 0);",
+      "prompt": "Write a query to extract all information fields from the 'inventory' table for rows where the 'stock_count' is exactly equal to 0."
+    },
+    {
+      "id": 7,
+      "language": "SQL",
+      "context_text": "Table 'employees' is loaded with records containing: emp_id, name, department, status.",
+      "context_code": "CREATE TABLE employees (emp_id INT, name TEXT, department TEXT, status TEXT); INSERT INTO employees VALUES (1, 'Raj', 'HR', 'Active'), (2, 'Pooja', 'Tech', 'On Leave'), (3, 'Vikram', 'Tech', 'Active'), (4, 'Neha', 'Finance', 'Terminated');",
+      "prompt": "Write an alternative filtering query that extracts the name and department metrics for candidates matching two constraints simultaneously: they must belong to the 'Tech' department and their structural status flag must be 'Active'."
+    }
+  ]
+}
