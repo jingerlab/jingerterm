@@ -1,56 +1,112 @@
 {
   "exam_name": "Data Analytics & Engineering Core Assessment",
   "institute_name": "SIBM Nagpur",
-  "duration_minutes": 5,
+  "duration_minutes": 60,
   "questions": [
     {
       "id": 1,
       "language": "Python",
-      "context_text": "A 2D NumPy array named 'matrix' is pre-loaded:\n[[10, 20, 30],\n [40, 50, 60],\n [70, 80, 90]]",
-      "context_code": "import numpy as np\nmatrix = np.array([[10, 20, 30], [40, 50, 60], [70, 80, 90]])\n",
-      "prompt": "Write code to slice the sub-matrix containing the elements [[50, 60], [80, 90]] and print it."
+      "context_text": "A list of 15 daily stock returns is available:\nreturns = [12.5, 14.2, 11.8, 15.6, 13.1, 12.9, 16.4, 11.2, 14.8, 15.0, 13.7, 12.1, 14.5, 13.3, 16.0]",
+      "context_code": "returns = [12.5, 14.2, 11.8, 15.6, 13.1, 12.9, 16.4, 11.2, 14.8, 15.0, 13.7, 12.1, 14.5, 13.3, 16.0]",
+      "prompt": "Calculate the standard deviation of these 15 daily stock returns without using any external libraries like numpy or math. Print the final result."
     },
     {
       "id": 2,
       "language": "Python",
-      "context_text": "A pandas DataFrame named 'df' is pre-loaded:\n   EmpID     Name  Salary\n0    101    Harsh   85000\n1    102    Sneha   92000\n2    103  Amitash   78000",
-      "context_code": "import pandas as pd\ndata = {'EmpID': [101, 102, 103], 'Name': ['Harsh', 'Sneha', 'Amitash'], 'Salary': [85000, 92000, 78000]}\ndf = pd.DataFrame(data)\n",
-      "prompt": "Filter the dataframe 'df' to show only the rows where Salary is greater than 80000. Print the resulting dataframe."
+      "context_text": "A 15-stock risk exposure vector is available as a pure Python list:\nrisk_vector = [3, 7, 2, 8, 5, 12, 4, 6, 9, 1, 11, 10, 14, 2, 5]",
+      "context_code": "risk_vector = [3, 7, 2, 8, 5, 12, 4, 6, 9, 1, 11, 10, 14, 2, 5]",
+      "prompt": "Find the Euclidean norm (square root of the sum of the squares) of this risk vector using pure Python. You may use the math library only for the final square root calculation. Print the result."
     },
     {
       "id": 3,
       "language": "Python",
-      "context_text": "A pandas DataFrame named 'sales_df' is pre-loaded:\n       Region  Revenue\n0       North    12000\n1        West    18000\n2       North    15000\n3        West    22000\n4        East    14000",
-      "context_code": "import pandas as pd\nsales_df = pd.DataFrame({'Region': ['North', 'West', 'North', 'West', 'East'], 'Revenue': [12000, 18000, 15000, 22000, 14000]})\n",
-      "prompt": "Group the 'sales_df' DataFrame by 'Region', calculate the total sum of 'Revenue' for each region, and print the resulting series or DataFrame."
+      "context_text": "A list of 15 quarterly growth multipliers is available:\ngrowth = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]",
+      "context_code": "growth = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]",
+      "prompt": "Calculate the geometric mean of these 15 quarterly growth multipliers to find the compounding growth rate. (Hint: The geometric mean is the n-th root of the product of all n numbers). Print the final value."
     },
     {
       "id": 4,
       "language": "Python",
-      "context_text": "A pandas DataFrame named 'survey_df' contains missing metric records:\n     ID   Age\n0  1001  25.0\n1  1002   NaN\n2  1003  29.0\n3  1004   NaN",
-      "context_code": "import pandas as pd\nimport numpy as np\nsurvey_df = pd.DataFrame({'ID': [1001, 1002, 1003, 1004], 'Age': [25.0, np.nan, 29.0, np.nan]})\n",
-      "prompt": "Impute the missing data cells inside the 'Age' column by filling all NaN references with the static numerical scalar value 30. Print the finalized DataFrame."
+      "context_text": "A list of 16 retail transaction amounts is available:\nsales = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160]",
+      "context_code": "sales = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160]",
+      "prompt": "Write a script to sequentially: 1) Print the total count (length) of transactions, 2) Append a new transaction value of 99, 3) Delete the invalid transaction at index 5, 4) Reverse the list order in-place, and 5) Print the final sum of all remaining transactions."
     },
     {
       "id": 5,
-      "language": "SQL",
-      "context_text": "Table 'students' is available with columns: id, name, score.",
-      "context_code": "CREATE TABLE students (id INT, name TEXT, score INT); INSERT INTO students VALUES (1, 'Alice', 95), (2, 'Bob', 82), (3, 'Charlie', 88);",
-      "prompt": "Select the 'name' and 'score' of all entries inside the 'students' table where score is greater than 85."
+      "language": "Python",
+      "context_text": "A list of 15 employee performance scores is pre-loaded:\nscores = [78, 85, 92, 64, 89, 95, 71, 83, 60, 76, 99, 82, 88, 67, 74]",
+      "context_code": "scores = [78, 85, 92, 64, 89, 95, 71, 83, 60, 76, 99, 82, 88, 67, 74]",
+      "prompt": "Write a program that removes both the highest and lowest outlier scores from the list, appends the average of those two removed scores to the end of the list, and prints the final sum."
     },
     {
       "id": 6,
-      "language": "SQL",
-      "context_text": "Table 'inventory' is available with columns: item_id, item_name, stock_count.",
-      "context_code": "CREATE TABLE inventory (item_id INT, item_name TEXT, stock_count INT); INSERT INTO inventory VALUES (501, 'Monitors', 12), (502, 'Keyboards', 0), (503, 'Mice', 45), (504, 'Laptops', 0);",
-      "prompt": "Write a query to extract all information fields from the 'inventory' table for rows where the 'stock_count' is exactly equal to 0."
+      "language": "Python",
+      "context_text": "A list of 15 marketing keywords is pre-loaded:\nkeywords = ['apple', 'to', 'banana', 'cat', 'elephant', 'dog', 'giraffe', 'hi', 'hippopotamus', 'it', 'kangaroo', 'lion', 'ox', 'zebra', 'monkey']",
+      "context_code": "keywords = ['apple', 'to', 'banana', 'cat', 'elephant', 'dog', 'giraffe', 'hi', 'hippopotamus', 'it', 'kangaroo', 'lion', 'ox', 'zebra', 'monkey']",
+      "prompt": "Write a script to programmatically filter out and delete any words with fewer than 5 letters from the list. Then, reverse the remaining list and append the string 'Completed' to the end. Print the final list."
     },
     {
       "id": 7,
-      "language": "SQL",
-      "context_text": "Table 'employees' is loaded with records containing: emp_id, name, department, status.",
-      "context_code": "CREATE TABLE employees (emp_id INT, name TEXT, department TEXT, status TEXT); INSERT INTO employees VALUES (1, 'Raj', 'HR', 'Active'), (2, 'Pooja', 'Tech', 'On Leave'), (3, 'Vikram', 'Tech', 'Active'), (4, 'Neha', 'Finance', 'Terminated');",
-      "prompt": "Write an alternative filtering query that extracts the name and department metrics for candidates matching two constraints simultaneously: they must belong to the 'Tech' department and their structural status flag must be 'Active'."
+      "language": "Python",
+      "context_text": "A 1D NumPy array contains 30 temperature readings in Celsius from a cargo container:\ncelsius = np.array([22.1, 24.5, 19.8, 23.4, 25.0, 21.2, 20.5, 18.9, 26.4, 27.1, 23.8, 22.0, 24.1, 25.5, 19.0, 20.1, 21.8, 22.9, 23.7, 26.0, 24.8, 21.5, 20.9, 19.5, 25.2, 26.8, 22.4, 23.1, 21.0, 24.3])",
+      "context_code": "import numpy as np\ncelsius = np.array([22.1, 24.5, 19.8, 23.4, 25.0, 21.2, 20.5, 18.9, 26.4, 27.1, 23.8, 22.0, 24.1, 25.5, 19.0, 20.1, 21.8, 22.9, 23.7, 26.0, 24.8, 21.5, 20.9, 19.5, 25.2, 26.8, 22.4, 23.1, 21.0, 24.3])\n",
+      "prompt": "Convert all elements in the array to Fahrenheit using the formula F = (C * 1.9) + 32, and then calculate and print the variance of the new array using numpy."
+    },
+    {
+      "id": 8,
+      "language": "Python",
+      "context_text": "A 1D NumPy array contains 36 raw market compatibility scores:\nscores = np.array([2, 1, 4, 3, 0, 5, 2, 1, 3, 4, 2, 5, 1, 0, 3, 2, 4, 1, 5, 3, 2, 0, 4, 1, 3, 5, 2, 4, 0, 1, 3, 2, 5, 4, 1, 2])",
+      "context_code": "import numpy as np\nscores = np.array([2, 1, 4, 3, 0, 5, 2, 1, 3, 4, 2, 5, 1, 0, 3, 2, 4, 1, 5, 3, 2, 0, 4, 1, 3, 5, 2, 4, 0, 1, 3, 2, 5, 4, 1, 2])\n",
+      "prompt": "Convert these 36 raw scores into an optimized probability distribution using the Softmax function (where individual value S(xi) = e^(xi) / sum(e^(xj))). Print the resulting array."
+    },
+    {
+      "id": 9,
+      "language": "Python",
+      "context_text": "A 1D NumPy array contains 32 property values in thousands of dollars:\nproperties = np.array([150, 320, 450, 210, 680, 890, 120, 540, 310, 770, 620, 430, 910, 250, 380, 490, 820, 110, 600, 730, 340, 520, 290, 860, 950, 410, 170, 640, 580, 230, 710, 800])",
+      "context_code": "import numpy as np\nproperties = np.array([150, 320, 450, 210, 680, 890, 120, 540, 310, 770, 620, 430, 910, 250, 380, 490, 820, 110, 600, 730, 340, 520, 290, 860, 950, 410, 170, 640, 580, 230, 710, 800])\n",
+      "prompt": "Normalize these 32 property values using Min-Max Scaling so that all values fall strictly between 0 and 1. Then, calculate and print the median value of this scaled index."
+    },
+    {
+      "id": 10,
+      "language": "Python",
+      "context_text": "A list contains a 16-week project budget breakdown:\nbudgets = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80]",
+      "context_code": "budgets = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80]",
+      "prompt": "Use list slicing to extract a new list containing every 3rd week starting from index 2 up to index 14. Then, use slicing to reverse that extracted list and print it."
+    },
+    {
+      "id": 11,
+      "language": "Python",
+      "context_text": "A 1D NumPy array contains 30 product dimensions from an inventory audit:\ndimensions = np.array([12, 45, 78, 23, 56, 89, 34, 67, 90, 11, 44, 77, 22, 55, 88, 33, 66, 99, 13, 46, 79, 24, 57, 80, 35, 68, 91, 14, 47, 70])",
+      "context_code": "import numpy as np\ndimensions = np.array([12, 45, 78, 23, 56, 89, 34, 67, 90, 11, 44, 77, 22, 55, 88, 33, 66, 99, 13, 46, 79, 24, 57, 80, 35, 68, 91, 14, 47, 70])\n",
+      "prompt": "Use array slicing to isolate the elements from index 5 to 25 (exclusive). Loop through this sliced selection, and if an item has an even value, print a statement saying 'Value X at index Y is defective.' where X is the value and Y is its index inside the slice."
+    },
+    {
+      "id": 12,
+      "language": "Python",
+      "context_text": "A 6x6 NumPy array represents regional revenue across 6 product lines:\nrevenue_matrix = np.array([[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30], [31, 32, 33, 34, 35, 36]])",
+      "context_code": "import numpy as np\nrevenue_matrix = np.array([[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30], [31, 32, 33, 34, 35, 36]])\n",
+      "prompt": "Use 2D array slicing to extract the inner 4x4 sub-matrix (excluding the outermost boundary rows and columns) and print the result."
+    },
+    {
+      "id": 13,
+      "language": "Python",
+      "context_text": "A 1D NumPy array contains 30 operational cost data points:\nops_data = np.array([1, 3, 5, 2, 4, 6, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 3, 1, 2, 4, 6])",
+      "context_code": "import numpy as np\nops_data = np.array([1, 3, 5, 2, 4, 6, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 3, 1, 2, 4, 6])\n",
+      "prompt": "Write code to: 1) Reshape the 1D array into a 5x6 2D matrix, 2) Multiply every element by 1.5 and then subtract a fixed cost of 10 from each element, 3) Flatten the modified matrix back into a 1D array, and 4) Compute and print its cumulative sum (cumsum)."
+    },
+    {
+      "id": 14,
+      "language": "Python",
+      "context_text": "A 1D NumPy array contains 27 supply chain logistics metrics:\nlogistics_data = np.array([2, 4, 1, 5, 3, 6, 2, 0, 4, 7, 1, 5, 8, 2, 6, 9, 3, 4, 1, 5, 2, 6, 3, 7, 4, 8, 5])",
+      "context_code": "import numpy as np\nlogistics_data = np.array([2, 4, 1, 5, 3, 6, 2, 0, 4, 7, 1, 5, 8, 2, 6, 9, 3, 4, 1, 5, 2, 6, 3, 7, 4, 8, 5])\n",
+      "prompt": "Write code to: 1) Reshape the 1D array into a 9x3 2D grid, 2) Square all values within the grid to highlight performance gaps, 3) Reshape the resulting data into a final 3x9 2D matrix, and 4) Print the final matrix."
+    },
+    {
+      "id": 15,
+      "language": "Python",
+      "context_text": "A 1D NumPy array tracks hourly sales data across 4 store locations over 8 hours (32 elements total):\nhourly_sales = np.array([14, 22, 53, 64, 15, 86, 27, 48, 91, 12, 33, 74, 55, 16, 77, 38, 19, 62, 43, 84, 25, 96, 37, 58, 41, 72, 13, 24, 65, 36, 87, 98])",
+      "context_code": "import numpy as np\nhourly_sales = np.array([14, 22, 53, 64, 15, 86, 27, 48, 91, 12, 33, 74, 55, 16, 77, 38, 19, 62, 43, 84, 25, 96, 37, 58, 41, 72, 13, 24, 65, 36, 87, 98])\n",
+      "prompt": "Reshape the array into a 4x8 matrix (where Rows = Stores and Columns = Hours). Calculate the column-wise sums to find the total revenue generated during each hour, and find the index of the hour that brought in the highest total revenue. Print both the hourly sums and the best hour index."
     }
   ]
 }
