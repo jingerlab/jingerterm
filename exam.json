@@ -1,7 +1,7 @@
 {
-  "exam_name": "Data Analytics & Engineering Core Assessment",
+  "exam_name": "Data Analysis Using Python",
   "institute_name": "SIBM Nagpur",
-  "duration_minutes": 60,
+  "duration_minutes": 150,
   "questions": [
     {
       "id": 1,
